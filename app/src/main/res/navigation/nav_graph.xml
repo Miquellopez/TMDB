@@ -18,5 +18,10 @@
         android:id="@+id/serieDetailFragment"
         android:name="com.miquellopez.tmdbapp.views.SerieDetailFragment"
         android:label="serie_detail_fragment"
-        tools:layout="@layout/serie_detail_fragment" />
+        tools:layout="@layout/serie_detail_fragment" >
+        <argument
+            android:name="id"
+            app:argType="string"
+            android:defaultValue="0" />
+    </fragment>
 </navigation>
