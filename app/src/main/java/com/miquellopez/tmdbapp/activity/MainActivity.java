@@ -1,8 +1,10 @@
-package com.miquellopez.tmdbapp;
+package com.miquellopez.tmdbapp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.miquellopez.tmdbapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
