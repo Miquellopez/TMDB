@@ -11,7 +11,6 @@ import androidx.lifecycle.MutableLiveData;
 import com.miquellopez.tmdbapp.model.Serie;
 import com.miquellopez.tmdbapp.model.SeriesPage;
 
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -35,7 +34,7 @@ public class SeriesRepository {
 
         MutableLiveData<SeriesPage> seriesPage = new MutableLiveData<>();
 
-        Call<SeriesPage> call = service.getSeries(KEY,numPage);
+        Call<SeriesPage> call = service.getSeries(KEY, numPage);
         call.enqueue(new Callback<SeriesPage>() {
             @Override
             public void onResponse(Call<SeriesPage> call, Response<SeriesPage> response) {
@@ -54,7 +53,7 @@ public class SeriesRepository {
 
         MutableLiveData<Serie> serie = new MutableLiveData<>();
 
-        Call<Serie> call = service.getSerieById(id,KEY);
+        Call<Serie> call = service.getSerieById(id, KEY);
         call.enqueue(new Callback<Serie>() {
             @Override
             public void onResponse(Call<Serie> call, Response<Serie> response) {

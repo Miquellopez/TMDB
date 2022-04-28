@@ -5,7 +5,6 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.ViewModel;
 
 import com.miquellopez.tmdbapp.model.Serie;
 import com.miquellopez.tmdbapp.retrofit.SeriesRepository;

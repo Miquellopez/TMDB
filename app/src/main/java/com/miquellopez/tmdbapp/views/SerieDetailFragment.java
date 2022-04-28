@@ -18,7 +18,6 @@ import android.view.ViewGroup;
 
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.miquellopez.tmdbapp.databinding.SerieDetailFragmentBinding;
 import com.miquellopez.tmdbapp.model.Serie;
 
