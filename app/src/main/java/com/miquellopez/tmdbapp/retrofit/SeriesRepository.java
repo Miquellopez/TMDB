@@ -1,5 +1,7 @@
 package com.miquellopez.tmdbapp.retrofit;
 
+import static com.miquellopez.tmdbapp.utils.Constants.KEY;
+
 import android.app.Application;
 import android.widget.Toast;
 
@@ -22,8 +24,6 @@ public class SeriesRepository {
     Retrofit seriesRetrofit;
     SeriesAPIService service;
     Application application;
-
-    public static final String KEY = "c6aeee577586ba38e487b74dfede5deb";
 
     public SeriesRepository(Application application) {
         this.seriesRetrofit = new Retrofit.Builder().baseUrl("https://api.themoviedb.org/3/tv/").addConverterFactory(GsonConverterFactory.create()).build();
@@ -53,6 +53,7 @@ public class SeriesRepository {
     public LiveData<Serie> getSerieFromID(int id) {
 
         MutableLiveData<Serie> serie = new MutableLiveData<>();
+
         Call<Serie> call = service.getSerieById(id,KEY);
         call.enqueue(new Callback<Serie>() {
             @Override

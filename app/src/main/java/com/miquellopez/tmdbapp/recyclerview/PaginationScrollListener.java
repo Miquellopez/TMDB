@@ -1,6 +1,5 @@
 package com.miquellopez.tmdbapp.recyclerview;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 

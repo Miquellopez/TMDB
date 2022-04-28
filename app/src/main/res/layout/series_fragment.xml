@@ -7,6 +7,19 @@
     tools:context=".views.SeriesFragment">
 
 
+    <ImageView
+        android:id="@+id/iv_tmdb"
+        android:layout_width="125dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/tmdb_logo"
+        app:layout_constraintBottom_toTopOf="@+id/rv_series"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_series"
         android:layout_width="0dp"
@@ -14,6 +27,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_tmdb" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

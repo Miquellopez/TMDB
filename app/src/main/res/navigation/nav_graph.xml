@@ -21,7 +21,6 @@
         tools:layout="@layout/serie_detail_fragment" >
         <argument
             android:name="id"
-            app:argType="string"
-            android:defaultValue="0" />
+            app:argType="integer" />
     </fragment>
 </navigation>

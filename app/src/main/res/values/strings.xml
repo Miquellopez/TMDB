@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TMDBApp</string>
+    <string name="first_air_date">First air date</string>
+    <string name="number_of_seasons">Number of seasons</string>
 </resources>

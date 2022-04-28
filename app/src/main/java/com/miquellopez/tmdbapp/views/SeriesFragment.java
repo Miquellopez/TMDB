@@ -1,5 +1,7 @@
 package com.miquellopez.tmdbapp.views;
 
+import static com.miquellopez.tmdbapp.utils.Constants.MAX_PAGE;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -13,6 +15,7 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,19 +26,37 @@ import com.miquellopez.tmdbapp.model.SeriesPage;
 import com.miquellopez.tmdbapp.recyclerview.PaginationScrollListener;
 import com.miquellopez.tmdbapp.recyclerview.SeriesAdapter;
 
+import java.util.List;
+import java.util.Objects;
+
 
 public class SeriesFragment extends Fragment {
 
-    private static final int MAX_PAGE = 4;
+    private static final String BUNDLE_RECYCLER_LAYOUT = "classname.recycler.layout";
+
     private SeriesViewModel mViewModel;
     private SeriesFragmentBinding binding;
     private SeriesAdapter adapter;
     private int currentPage = 1;
-    private int positionAdapter;
-    private boolean isLoading = false;
+    GridLayoutManager gridLayoutManager;
+    private Parcelable state;
+    LiveData<SeriesPage> nextSeries;
+    private List<Serie> auxList;
+    private int auxPage;
 
     public static SeriesFragment newInstance() {
         return new SeriesFragment();
+    }
+
+
+    @Override
+    public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
+        super.onViewStateRestored(savedInstanceState);
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
 
     @Override
@@ -43,6 +64,7 @@ public class SeriesFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         mViewModel = new ViewModelProvider(this).get(SeriesViewModel.class);
         binding = SeriesFragmentBinding.inflate(inflater, container, false);
+        currentPage = 1;
         return binding.getRoot();
     }
 
@@ -50,7 +72,7 @@ public class SeriesFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+        gridLayoutManager = new GridLayoutManager(getContext(), 2);
         binding.rvSeries.setLayoutManager(gridLayoutManager);
         binding.rvSeries.setHasFixedSize(true);
 
@@ -64,7 +86,6 @@ public class SeriesFragment extends Fragment {
             @Override
             protected void loadMoreItems() {
                 if (currentPage != MAX_PAGE) {
-                    isLoading = true;
                     currentPage += 1;
                     loadNextPage();
                 }
@@ -74,14 +95,14 @@ public class SeriesFragment extends Fragment {
     }
 
     private void viewSerie(Serie serie) {
-        String id = serie.getId();
-        NavDirections direction = SeriesFragmentDirections.actionSeriesFragmentToSerieDetailFragment().setId(id);
+        int id = serie.getId();
+        NavDirections direction = SeriesFragmentDirections.actionSeriesFragmentToSerieDetailFragment(id);
         Navigation.findNavController(requireView()).navigate(direction);
     }
 
 
     private void loadNextPage() {
-        LiveData<SeriesPage> nextSeries = mViewModel.getSeries(currentPage);
+        nextSeries = mViewModel.getSeries(currentPage);
         nextSeries.observe(getViewLifecycleOwner(), this::onNextPage);
     }
 
