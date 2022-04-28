@@ -4,13 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:context=".views.SerieDetailFragment">
 
 
@@ -27,6 +27,7 @@
             android:id="@+id/tv_serie_name_call"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:textColor="@color/light_blue"
             android:layout_marginTop="32dp"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
@@ -42,6 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
+            android:textColor="@color/dark_blue"
             android:layout_marginTop="32dp"
             android:text="@string/first_air_date"
             app:layout_constraintStart_toStartOf="parent"
@@ -51,6 +53,7 @@
             android:id="@+id/tv_first_air_date_call"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
+            android:textColor="@color/green"
             android:layout_marginStart="16dp"
             app:layout_constraintBottom_toBottomOf="@+id/tv_first_air_date"
             app:layout_constraintStart_toEndOf="@+id/tv_first_air_date"
@@ -62,6 +65,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:textColor="@color/dark_blue"
             android:text="@string/number_of_seasons"
             app:layout_constraintEnd_toEndOf="@+id/tv_first_air_date"
             app:layout_constraintStart_toStartOf="@+id/tv_first_air_date"
@@ -71,6 +75,7 @@
             android:id="@+id/tv_number_of_seasons_call"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/green"
             android:layout_marginStart="16dp"
             app:layout_constraintBottom_toBottomOf="@+id/tv_number_of_seasons"
             app:layout_constraintStart_toEndOf="@+id/tv_number_of_seasons"
@@ -80,8 +85,9 @@
         <TextView
             android:id="@+id/tv_overview"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="8dp"
+            android:textColor="@color/green"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="24dp"
             android:paddingStart="0dp"

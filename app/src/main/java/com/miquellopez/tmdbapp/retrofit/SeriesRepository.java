@@ -12,6 +12,8 @@ import com.miquellopez.tmdbapp.model.Serie;
 import com.miquellopez.tmdbapp.model.SeriesPage;
 
 
+import java.util.Locale;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -23,18 +25,21 @@ public class SeriesRepository {
     Retrofit seriesRetrofit;
     SeriesAPIService service;
     Application application;
+    private String language;
+
 
     public SeriesRepository(Application application) {
         this.seriesRetrofit = new Retrofit.Builder().baseUrl("https://api.themoviedb.org/3/tv/").addConverterFactory(GsonConverterFactory.create()).build();
         this.service = seriesRetrofit.create(SeriesAPIService.class);
         this.application = application;
+        this.language = Locale.getDefault().toLanguageTag();
     }
 
     public LiveData<SeriesPage> getSeries(int numPage) {
 
         MutableLiveData<SeriesPage> seriesPage = new MutableLiveData<>();
 
-        Call<SeriesPage> call = service.getSeries(KEY, numPage);
+        Call<SeriesPage> call = service.getSeries(KEY, numPage, language);
         call.enqueue(new Callback<SeriesPage>() {
             @Override
             public void onResponse(Call<SeriesPage> call, Response<SeriesPage> response) {
@@ -53,7 +58,7 @@ public class SeriesRepository {
 
         MutableLiveData<Serie> serie = new MutableLiveData<>();
 
-        Call<Serie> call = service.getSerieById(id, KEY);
+        Call<Serie> call = service.getSerieById(id, KEY, language);
         call.enqueue(new Callback<Serie>() {
             @Override
             public void onResponse(Call<Serie> call, Response<Serie> response) {

@@ -13,7 +13,7 @@
         android:theme="@style/Theme.TMDBApp">
         <activity
             android:name=".activity.MainActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
             android:exported="true"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>
