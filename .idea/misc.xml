@@ -4,6 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Milok/AndroidStudioProjects/TMDBApp/app/src/main/res/layout/activity_main.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/Milok/AndroidStudioProjects/TMDBApp/app/src/main/res/layout/progress_item.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/Milok/AndroidStudioProjects/TMDBApp/app/src/main/res/layout/serie_detail_fragment.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/Milok/AndroidStudioProjects/TMDBApp/app/src/main/res/layout/serie_item.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/Milok/AndroidStudioProjects/TMDBApp/app/src/main/res/layout/series_fragment.xml" value="0.25" />
       </map>
     </option>

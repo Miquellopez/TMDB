@@ -13,10 +13,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.miquellopez.tmdbapp.R;
+import com.miquellopez.tmdbapp.databinding.SerieDetailFragmentBinding;
+
 
 public class SerieDetailFragment extends Fragment {
 
     private SerieDetailViewModel mViewModel;
+    private SerieDetailFragmentBinding binding;
 
     public static SerieDetailFragment newInstance() {
         return new SerieDetailFragment();
@@ -25,14 +28,11 @@ public class SerieDetailFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+        mViewModel = new ViewModelProvider(this).get(SerieDetailViewModel.class);
         return inflater.inflate(R.layout.serie_detail_fragment, container, false);
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(SerieDetailViewModel.class);
-        // TODO: Use the ViewModel
-    }
+
+
 
 }
