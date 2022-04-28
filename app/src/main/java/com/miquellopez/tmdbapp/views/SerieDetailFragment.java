@@ -11,9 +11,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -25,7 +27,6 @@ public class SerieDetailFragment extends Fragment {
 
     private SerieDetailViewModel mViewModel;
     private SerieDetailFragmentBinding binding;
-    private LiveData<Serie> serie;
     private int id;
 
     public static SerieDetailFragment newInstance() {
@@ -43,7 +44,6 @@ public class SerieDetailFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         if (getArguments() != null) {
             id = (SerieDetailFragmentArgs.fromBundle(getArguments()).getId());
         }
@@ -52,15 +52,15 @@ public class SerieDetailFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        serie = mViewModel.getSerie(id);
+        LiveData<Serie> serie = mViewModel.getSerie(id);
         serie.observe(getViewLifecycleOwner(), this::serieChanged);
     }
 
     private void serieChanged(Serie serie) {
+
         Glide.with(requireContext()).
                 load(URL + serie.getCover()).
-                apply(RequestOptions.fitCenterTransform()).
+                fitCenter().
                 into(binding.ivCover);
         binding.tvSerieNameCall.setText(serie.getName());
         binding.tvFirstAirDateCall.setText(serie.getFirstAirDate());

@@ -12,6 +12,7 @@ import com.miquellopez.tmdbapp.retrofit.SeriesRepository;
 public class SeriesViewModel extends AndroidViewModel {
 
     SeriesRepository repository;
+    LiveData<SeriesPage> series;
 
     public SeriesViewModel(@NonNull Application application) {
         super(application);
@@ -19,8 +20,8 @@ public class SeriesViewModel extends AndroidViewModel {
     }
 
     public LiveData <SeriesPage> getSeries(int numPage) {
-        return repository.getSeries(numPage);
+        series = repository.getSeries(numPage);
+        return series;
     }
-
 
 }

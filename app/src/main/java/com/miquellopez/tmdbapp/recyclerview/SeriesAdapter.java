@@ -68,11 +68,6 @@ public class SeriesAdapter extends RecyclerView.Adapter<SeriesAdapter.SeriesView
         return size;
     }
 
-    public int getPosition() {
-        return position;
-    }
-
-
 
     public class SeriesViewHolder extends RecyclerView.ViewHolder {
 

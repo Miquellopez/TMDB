@@ -2,7 +2,6 @@ package com.miquellopez.tmdbapp.model;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
 
 public class Serie {
 
@@ -24,20 +23,16 @@ public class Serie {
     @SerializedName("first_air_date")
     private String firstAirDate;
 
-    @SerializedName("genres")
-    private List<Genre> genres;
-
     public Serie() {
     }
 
-    public Serie(String cover, int id, String name, String overview, int numberOfSeasons, String firstAirDate, List<Genre> genres) {
+    public Serie(String cover, int id, String name, String overview, int numberOfSeasons, String firstAirDate) {
         this.cover = cover;
         this.id = id;
         this.name = name;
         this.overview = overview;
         this.numberOfSeasons = numberOfSeasons;
         this.firstAirDate = firstAirDate;
-        this.genres = genres;
     }
 
     public String getName() {
@@ -65,7 +60,4 @@ public class Serie {
         return firstAirDate;
     }
 
-    public List<Genre> getGenres() {
-        return genres;
-    }
 }
