@@ -1,5 +1,6 @@
 package com.miquellopez.tmdbapp.recyclerview;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -25,6 +26,12 @@ public abstract class PaginationScrollListener extends RecyclerView.OnScrollList
         }
 
     }
+
+    @Override
+    public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+        super.onScrollStateChanged(recyclerView, newState);
+    }
+
 
     protected abstract void loadMoreItems();
 

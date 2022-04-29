@@ -7,12 +7,30 @@
     android:layout_height="wrap_content"
     android:fillViewport="true">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         tools:context=".views.SerieDetailFragment">
 
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:shimmer_duration="400"
+            android:forceDarkAllowed="false"
+            app:shimmer_direction="left_to_right"
+            tools:targetApi="q">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/serie_placeholder_detail" />
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
 
         <ImageView
             android:id="@+id/iv_cover"
@@ -26,12 +44,15 @@
         <TextView
             android:id="@+id/tv_serie_name_call"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:textColor="@color/light_blue"
-            android:layout_marginTop="32dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            android:fontFamily="@font/main_font"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
             android:textAlignment="center"
+            android:textColor="@color/light_blue"
             android:textSize="34sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,20 +61,19 @@
 
         <TextView
             android:id="@+id/tv_first_air_date"
+            style="@style/Style.Titles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:textColor="@color/dark_blue"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="8dp"
             android:text="@string/first_air_date"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_serie_name_call" />
+            app:layout_constraintStart_toStartOf="@+id/placeholder"
+            app:layout_constraintTop_toBottomOf="@+id/tv_creators_call" />
 
         <TextView
             android:id="@+id/tv_first_air_date_call"
+            style="@style/Style.Text"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:textColor="@color/green"
             android:layout_marginStart="16dp"
             app:layout_constraintBottom_toBottomOf="@+id/tv_first_air_date"
             app:layout_constraintStart_toEndOf="@+id/tv_first_air_date"
@@ -62,10 +82,10 @@
 
         <TextView
             android:id="@+id/tv_number_of_seasons"
+            style="@style/Style.Titles"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:textColor="@color/dark_blue"
             android:text="@string/number_of_seasons"
             app:layout_constraintEnd_toEndOf="@+id/tv_first_air_date"
             app:layout_constraintStart_toStartOf="@+id/tv_first_air_date"
@@ -73,9 +93,9 @@
 
         <TextView
             android:id="@+id/tv_number_of_seasons_call"
+            style="@style/Style.Text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/green"
             android:layout_marginStart="16dp"
             app:layout_constraintBottom_toBottomOf="@+id/tv_number_of_seasons"
             app:layout_constraintStart_toEndOf="@+id/tv_number_of_seasons"
@@ -84,20 +104,92 @@
 
         <TextView
             android:id="@+id/tv_overview"
+            style="@style/Style.Text"
             android:layout_width="0dp"
-            android:textColor="@color/green"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginBottom="24dp"
             android:paddingStart="0dp"
             android:paddingEnd="2dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/tv_number_of_seasons"
             app:layout_constraintTop_toBottomOf="@+id/tv_number_of_seasons"
             tools:text="Overview" />
 
+        <TextView
+            android:id="@+id/placeholder"
+            style="@style/Style.Titles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/creators"
+            app:layout_constraintStart_toStartOf="@+id/tv_genres"
+            app:layout_constraintTop_toBottomOf="@+id/tv_genres_call" />
+
+        <TextView
+            android:id="@+id/tv_creators_call"
+            style="@style/Style.Text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintBottom_toBottomOf="@+id/placeholder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/placeholder"
+            app:layout_constraintTop_toTopOf="@+id/placeholder"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="TextView" />
+
+        <TextView
+            android:id="@+id/tv_homepage"
+            style="@style/Style.Titles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/homepage"
+            app:layout_constraintStart_toStartOf="@+id/tv_overview"
+            app:layout_constraintTop_toBottomOf="@+id/tv_overview" />
+
+        <TextView
+            android:id="@+id/tv_homepage_call"
+            style="@style/Style.Text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_homepage"
+            app:layout_constraintTop_toBottomOf="@+id/tv_homepage"
+            tools:text="TextView" />
+
+        <TextView
+            android:id="@+id/tv_genres_call"
+            style="@style/Style.Text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_genres"
+            app:layout_constraintTop_toTopOf="@+id/tv_genres"
+            tools:text="TextView" />
+
+        <TextView
+            android:id="@+id/tv_genres"
+            style="@style/Style.Titles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/genres"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_serie_name_call" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </androidx.core.widget.NestedScrollView>
 

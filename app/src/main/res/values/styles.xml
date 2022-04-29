@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Toolbar theme. -->
+    <style name="Style.Shimmer" parent="@android:style/TextAppearance">
+
+        <item name="android:background">@color/shimmerColor</item>
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">40dp</item>
+    </style>
+
+    <style name="Style.Titles" parent="@android:style/TextAppearance">
+
+        <item name="android:textColor">@color/dark_blue</item>
+        <item name="fontFamily">@font/main_font</item>
+        <item name="android:textSize">14sp</item>
+
+    </style>
+
+    <style name="Style.Text" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/green</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+</resources>

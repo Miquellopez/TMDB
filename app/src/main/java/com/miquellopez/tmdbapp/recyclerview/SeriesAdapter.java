@@ -68,6 +68,13 @@ public class SeriesAdapter extends RecyclerView.Adapter<SeriesAdapter.SeriesView
         return size;
     }
 
+    public List<Serie> getSeriesList() {
+        return seriesList;
+    }
+
+    public void cleanList() {
+        this.seriesList.clear();
+    }
 
     public class SeriesViewHolder extends RecyclerView.ViewHolder {
 

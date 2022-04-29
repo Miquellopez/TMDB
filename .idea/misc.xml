@@ -4,11 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Milok/AndroidStudioProjects/TMDBApp/app/src/main/res/layout-v26/serie_detail_fragment.xml" value="0.25" />
+        <entry key="..\:/Users/Milok/AndroidStudioProjects/TMDBApp/app/src/main/res/layout-v26/serie_item_placeholder.xml" value="0.2573749465583583" />
         <entry key="..\:/Users/Milok/AndroidStudioProjects/TMDBApp/app/src/main/res/layout/activity_main.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/Milok/AndroidStudioProjects/TMDBApp/app/src/main/res/layout/placeholder_layout.xml" value="0.31354166666666666" />
         <entry key="..\:/Users/Milok/AndroidStudioProjects/TMDBApp/app/src/main/res/layout/progress_item.xml" value="0.5541666666666667" />
-        <entry key="..\:/Users/Milok/AndroidStudioProjects/TMDBApp/app/src/main/res/layout/serie_detail_fragment.xml" value="0.33" />
+        <entry key="..\:/Users/Milok/AndroidStudioProjects/TMDBApp/app/src/main/res/layout/serie_detail_fragment.xml" value="0.40364188163884673" />
         <entry key="..\:/Users/Milok/AndroidStudioProjects/TMDBApp/app/src/main/res/layout/serie_item.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/Milok/AndroidStudioProjects/TMDBApp/app/src/main/res/layout/serie_placeholder_detail.xml" value="0.33" />
+        <entry key="..\:/Users/Milok/AndroidStudioProjects/TMDBApp/app/src/main/res/layout/serie_placeholder_item.xml" value="0.2573749465583583" />
         <entry key="..\:/Users/Milok/AndroidStudioProjects/TMDBApp/app/src/main/res/layout/series_fragment.xml" value="0.25" />
         <entry key="..\:/Users/Milok/AndroidStudioProjects/TMDBApp/app/src/main/res/layout/shimmer_layout.xml" value="0.31354166666666666" />
       </map>

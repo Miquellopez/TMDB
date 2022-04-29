@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".views.SerieDetailFragment">
+
+    <View
+        android:id="@+id/cover_placeholder"
+        android:layout_width="241dp"
+        android:layout_height="314dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/shimmerColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/placeholder"
+        style="@style/Style.Shimmer"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/cover_placeholder"
+        app:layout_constraintStart_toStartOf="@+id/cover_placeholder"
+        app:layout_constraintTop_toBottomOf="@+id/cover_placeholder" />
+
+    <TextView
+        android:id="@+id/placeholder10"
+        style="@style/Style.Shimmer"
+        android:layout_width="140dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/placeholder12"
+        app:layout_constraintTop_toBottomOf="@+id/placeholder12" />
+
+    <TextView
+        android:id="@+id/placeholder12"
+        style="@style/Style.Shimmer"
+        android:layout_width="140dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/placeholder9"
+        app:layout_constraintVertical_bias="0.318" />
+
+    <TextView
+        android:id="@+id/placeholder3"
+        style="@style/Style.Shimmer"
+        android:layout_width="103dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@+id/placeholder"
+        app:layout_constraintTop_toBottomOf="@+id/placeholder" />
+
+    <TextView
+        android:id="@+id/placeholder6"
+        style="@style/Style.Shimmer"
+        android:layout_width="103dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/placeholder3"
+        app:layout_constraintTop_toBottomOf="@+id/placeholder3" />
+
+    <TextView
+        android:id="@+id/placeholder7"
+        style="@style/Style.Shimmer"
+        android:layout_width="100dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/placeholder6"
+        app:layout_constraintTop_toBottomOf="@+id/placeholder6" />
+
+    <TextView
+        android:id="@+id/placeholder9"
+        style="@style/Style.Shimmer"
+        android:layout_width="92dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/placeholder7"
+        app:layout_constraintTop_toBottomOf="@+id/placeholder7" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
