@@ -12,7 +12,8 @@
         tools:layout="@layout/series_fragment" >
         <action
             android:id="@+id/action_seriesFragment_to_serieDetailFragment"
-            app:destination="@id/serieDetailFragment" />
+            app:destination="@id/serieDetailFragment"
+            app:enterAnim="@android:anim/fade_in" />
     </fragment>
     <fragment
         android:id="@+id/serieDetailFragment"

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="dark_blue">#04B2D9</color>
     <color name="light_blue">#07C4D9</color>
     <color name="turquoise">#5EBFAD</color>
     <color name="green">#91D9AA</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#0D0D0D</color>
+    <color name="black">#2B2B2B</color>
     <color name="white">#FFFFFFFF</color>
     <color name="shimmerColor">#D3D3D3</color>
+    <color name="orange">#FB8C00</color>
 </resources>

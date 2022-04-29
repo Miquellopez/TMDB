@@ -1,11 +1,19 @@
 package com.miquellopez.tmdbapp.model;
 
+
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
 
 public class Serie {
+
+
+    @SerializedName("id")
+    private int id;
+
+    @SerializedName("vote_average")
+    private double voteAverage;
 
     @SerializedName("poster_path")
     private String cover;
@@ -15,9 +23,6 @@ public class Serie {
 
     @SerializedName("genres")
     private List<Genre> genres;
-
-    @SerializedName("id")
-    private int id;
 
     @SerializedName("homepage")
     private String homepage;
@@ -37,15 +42,52 @@ public class Serie {
     public Serie() {
     }
 
-    public Serie(String cover, int id, List<Creator> creators, List<Genre> genres, String homepage, String name, String overview, int numberOfSeasons, String firstAirDate) {
-        this.cover = cover;
+    public Serie(int id, double voteAverage, String cover, List<Creator> creators, List<Genre> genres, String homepage, String name, String overview, int numberOfSeasons, String firstAirDate) {
         this.id = id;
+        this.voteAverage = voteAverage;
+        this.cover = cover;
         this.creators = creators;
         this.genres = genres;
         this.homepage = homepage;
         this.name = name;
         this.overview = overview;
         this.numberOfSeasons = numberOfSeasons;
+        this.firstAirDate = firstAirDate;
+    }
+
+    public double getVoteAverage() {
+        return voteAverage;
+    }
+
+    public void setCover(String cover) {
+        this.cover = cover;
+    }
+
+    public void setCreators(List<Creator> creators) {
+        this.creators = creators;
+    }
+
+    public void setGenres(List<Genre> genres) {
+        this.genres = genres;
+    }
+
+    public void setHomepage(String homepage) {
+        this.homepage = homepage;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setOverview(String overview) {
+        this.overview = overview;
+    }
+
+    public void setNumberOfSeasons(int numberOfSeasons) {
+        this.numberOfSeasons = numberOfSeasons;
+    }
+
+    public void setFirstAirDate(String firstAirDate) {
         this.firstAirDate = firstAirDate;
     }
 
@@ -67,6 +109,10 @@ public class Serie {
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public List<Creator> getCreators() {

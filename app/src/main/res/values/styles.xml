@@ -8,17 +8,18 @@
         <item name="android:layout_height">40dp</item>
     </style>
 
-    <style name="Style.Titles" parent="@android:style/TextAppearance">
+    <style name="Style.Titles" parent="Theme.TMDBApp">
 
-        <item name="android:textColor">@color/dark_blue</item>
-        <item name="fontFamily">@font/main_font</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="fontFamily">@font/grotesque_extended</item>
         <item name="android:textSize">14sp</item>
 
     </style>
 
     <style name="Style.Text" parent="@android:style/TextAppearance">
-        <item name="android:textColor">@color/green</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
         <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/grotesque_regular</item>
     </style>
 
 </resources>

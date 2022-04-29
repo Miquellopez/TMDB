@@ -6,4 +6,7 @@
     <string name="creators">Created by</string>
     <string name="homepage">Homepage</string>
     <string name="genres">Genres</string>
+    <string name="no_creators">Creators not found</string>
+    <string name="no_genres">Genres not found</string>
+    <string name="no_serie_name">Name of the serie not found</string>
 </resources>

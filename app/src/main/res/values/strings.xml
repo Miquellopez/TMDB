@@ -5,4 +5,7 @@
     <string name="creators">Creado por</string>
     <string name="homepage">Página principal</string>
     <string name="genres">Géneros</string>
+    <string name="no_creators">Creadores no encontrados</string>
+    <string name="no_genres">Géneros no encontrados</string>
+    <string name="no_serie_name">Nombre de la serie no encontrado</string>
 </resources>

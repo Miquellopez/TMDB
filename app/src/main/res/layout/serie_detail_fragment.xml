@@ -18,7 +18,6 @@
             android:id="@+id/shimmer_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:shimmer_duration="400"
             android:forceDarkAllowed="false"
             app:shimmer_direction="left_to_right"
             tools:targetApi="q">
@@ -43,18 +42,16 @@
 
         <TextView
             android:id="@+id/tv_serie_name_call"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="32dp"
-            android:fontFamily="@font/main_font"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:textAlignment="center"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/grotesque_extended"
+            android:textAlignment="textStart"
             android:textColor="@color/light_blue"
             android:textSize="34sp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/iv_star"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_cover"
             tools:text="TextView" />
@@ -72,11 +69,12 @@
         <TextView
             android:id="@+id/tv_first_air_date_call"
             style="@style/Style.Text"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginStart="16dp"
+            android:layout_marginEnd="24dp"
             app:layout_constraintBottom_toBottomOf="@+id/tv_first_air_date"
-            app:layout_constraintStart_toEndOf="@+id/tv_first_air_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_number_of_seasons_call"
             app:layout_constraintTop_toTopOf="@+id/tv_first_air_date"
             tools:text="TextView" />
 
@@ -107,13 +105,12 @@
             style="@style/Style.Text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="32dp"
+            android:layout_marginTop="24dp"
             android:paddingStart="0dp"
             android:paddingEnd="2dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tv_number_of_seasons"
-            app:layout_constraintTop_toBottomOf="@+id/tv_number_of_seasons"
+            app:layout_constraintEnd_toEndOf="@+id/tv_vote_average_call"
+            app:layout_constraintStart_toStartOf="@+id/tv_serie_name_call"
+            app:layout_constraintTop_toBottomOf="@+id/tv_serie_name_call"
             tools:text="Overview" />
 
         <TextView
@@ -131,12 +128,10 @@
             style="@style/Style.Text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="32dp"
+            android:layout_marginEnd="24dp"
             app:layout_constraintBottom_toBottomOf="@+id/placeholder"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/placeholder"
+            app:layout_constraintStart_toStartOf="@+id/tv_first_air_date_call"
             app:layout_constraintTop_toTopOf="@+id/placeholder"
             app:layout_constraintVertical_bias="0.0"
             tools:text="TextView" />
@@ -148,8 +143,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/homepage"
-            app:layout_constraintStart_toStartOf="@+id/tv_overview"
-            app:layout_constraintTop_toBottomOf="@+id/tv_overview" />
+            app:layout_constraintStart_toStartOf="@+id/tv_number_of_seasons"
+            app:layout_constraintTop_toBottomOf="@+id/tv_number_of_seasons" />
 
         <TextView
             android:id="@+id/tv_homepage_call"
@@ -170,11 +165,12 @@
             style="@style/Style.Text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="32dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_genres"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tv_genres"
+            app:layout_constraintStart_toStartOf="@+id/tv_creators_call"
             app:layout_constraintTop_toTopOf="@+id/tv_genres"
+            app:layout_constraintVertical_bias="0.0"
             tools:text="TextView" />
 
         <TextView
@@ -182,11 +178,31 @@
             style="@style/Style.Titles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
             android:layout_marginTop="24dp"
             android:text="@string/genres"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_serie_name_call" />
+            app:layout_constraintStart_toStartOf="@+id/tv_overview"
+            app:layout_constraintTop_toBottomOf="@+id/tv_overview" />
+
+        <ImageView
+            android:id="@+id/iv_star"
+            android:layout_width="23dp"
+            android:layout_height="19dp"
+            android:layout_marginEnd="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_serie_name_call"
+            app:layout_constraintEnd_toStartOf="@+id/tv_vote_average_call"
+            app:layout_constraintTop_toTopOf="@+id/tv_serie_name_call"
+            app:srcCompat="@drawable/ic_baseline_star_rate_24" />
+
+        <TextView
+            android:id="@+id/tv_vote_average_call"
+            style="@style/Style.Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            tools:text="8.0"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_star"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_star" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

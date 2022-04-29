@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
 
+import com.miquellopez.tmdbapp.R;
 import com.miquellopez.tmdbapp.databinding.SerieDetailFragmentBinding;
 
 import com.miquellopez.tmdbapp.model.Serie;
@@ -75,48 +76,76 @@ public class SerieDetailFragment extends Fragment {
          */
         stopShimmer();
 
-        Glide.with(requireContext()).
-                load(URL + serie.getCover()).
-                fitCenter().
-                into(binding.ivCover);
+        if (!serie.getCover().isEmpty()) {
+            Glide.with(requireContext()).
+                    load(URL + serie.getCover()).
+                    fitCenter().
+                    into(binding.ivCover);
+        } else {
+            binding.ivCover.setImageResource(R.drawable.tmdb_logo);
+        }
         setupCreators(serie);
         setupGenres(serie);
-        binding.tvHomepageCall.setText(serie.getHomepage());
-        binding.tvSerieNameCall.setText(serie.getName());
+        if (!serie.getHomepage().isEmpty()) {
+            binding.tvHomepageCall.setText(serie.getHomepage());
+        } else {
+            binding.tvHomepageCall.setText(" ");
+        }
+
+        if (!serie.getName().isEmpty()) {
+            binding.tvSerieNameCall.setText(serie.getName());
+        } else {
+            binding.tvSerieNameCall.setText(R.string.no_serie_name);
+        }
         binding.tvFirstAirDateCall.setText(serie.getFirstAirDate());
         binding.tvNumberOfSeasonsCall.setText(String.valueOf(serie.getNumberOfSeasons()));
-        binding.tvOverview.setText(serie.getOverview());
+
+        if (!serie.getOverview().isEmpty()) {
+            binding.tvOverview.setText(serie.getOverview());
+        } else {
+            binding.tvOverview.setText(" ");
+        }
+
+        binding.tvVoteAverageCall.setText(String.valueOf(serie.getVoteAverage()));
     }
 
     private void setupGenres(Serie serie) {
-        StringBuilder sbg = new StringBuilder();
-        for (int i = 0; i < serie.getGenres().size(); i++) {
-            sbg.append(serie.getGenres().get(i).getGenre());
-            if (i != serie.getGenres().size() - 1) {
-                sbg.append(", ");
+        if (!serie.getCreators().isEmpty()) {
+            StringBuilder sbg = new StringBuilder();
+            for (int i = 0; i < serie.getGenres().size(); i++) {
+                sbg.append(serie.getGenres().get(i).getGenre());
+                if (i != serie.getGenres().size() - 1) {
+                    sbg.append(", ");
+                }
             }
+            String genres = sbg.toString();
+            binding.tvGenresCall.setText(genres);
+        } else {
+            binding.tvGenresCall.setText(R.string.no_genres);
         }
-        String genres = sbg.toString();
-        binding.tvGenresCall.setText(genres);
     }
 
     private void setupCreators(Serie serie) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < serie.getCreators().size(); i++) {
-            sb.append(serie.getCreators().get(i).getName());
-            if (i != serie.getCreators().size() - 1) {
-                sb.append(", ");
+
+        if (!serie.getCreators().isEmpty()) {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < serie.getCreators().size(); i++) {
+                sb.append(serie.getCreators().get(i).getName());
+                if (i != serie.getCreators().size() - 1) {
+                    sb.append(", ");
+                }
             }
+            String resultCreators = sb.toString();
+            binding.tvCreatorsCall.setText(resultCreators);
+        } else {
+            binding.tvCreatorsCall.setText(R.string.no_creators);
         }
-        String resultCreators = sb.toString();
-        binding.tvCreatorsCall.setText(resultCreators);
     }
 
     private void stopShimmer() {
         binding.shimmerLayout.stopShimmer();
         binding.shimmerLayout.setVisibility(View.INVISIBLE);
     }
-
 
     @Override
     public void onDestroyView() {

@@ -36,5 +36,4 @@ public class SeriesViewModel extends AndroidViewModel {
         return seriesState;
     }
 
-
 }

@@ -5,6 +5,8 @@ import static com.miquellopez.tmdbapp.utils.Constants.MAX_PAGE;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -57,22 +59,22 @@ public class SeriesFragment extends Fragment {
         currentPage = 1;
         setupRV();
 
-        /*
-        Si la posición ha cambiado, quiere decir que se ha hecho scroll y por tanto se recupera el estado.
-        Sino, se carga de nuevo la lista en el recyclerview
-         */
         if (positionIndex != 0) {
             restoreState();
         } else {
             loadNextPage();
         }
 
+
         binding.rvSeries.addOnScrollListener(new PaginationScrollListener(gridLayoutManager) {
             @Override
             protected void loadMoreItems() {
+
                 if (currentPage != MAX_PAGE) {
                     currentPage += 1;
+
                     loadNextPage();
+
                 }
             }
         });
